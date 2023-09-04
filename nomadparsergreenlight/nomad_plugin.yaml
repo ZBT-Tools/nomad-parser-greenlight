@@ -1,0 +1,10 @@
+plugin_type: parser
+name: parsers/greenlight
+description: |
+  This is a parser to parse data from Greenlight fuel cell test rigs to a NOMAD data structure
+mainfile_name_re: ^(.+\.(csv|xlsx))$
+mainfile_mime_re: '(application|text)/.*'
+# mainfile_name_re: ^.*\.greenlight\.csv$
+# mainfile_mime_re: application/csv
+parser_class_name: nomadparsergreenlight.GreenlightParser
+code_name: Example code
