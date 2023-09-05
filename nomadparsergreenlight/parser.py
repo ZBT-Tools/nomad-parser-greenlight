@@ -3,6 +3,7 @@ import numpy as np
 from nomad.metainfo import MSection, Quantity
 from nomad.parsing.parser import MatchingParser
 from nomad.datamodel import EntryArchive
+from nomad.units import ureg
 # from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
 
 # import custom library
@@ -39,5 +40,9 @@ class GreenlightParser(MatchingParser):
         print(data_file_object.data.columns)
         archive.data.test_name = data_file_object.header['Test Name']
         archive.data.cell_voltage = data_file_object.data['cell_voltage_total']
+        # archive.data.cell_voltage.unit = data_file_object.units['cell_voltage_total']
         archive.data.current_density = data_file_object.data['current_density']
+        # archive.data.current_density.unit = data_file_object.units['current_density']
+        archive.data.current = data_file_object.data['current']
+
 
